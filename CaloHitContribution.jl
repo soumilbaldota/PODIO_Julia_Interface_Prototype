@@ -5,7 +5,10 @@ mutable struct CaloHitContribution
     energy::Float32
     time::Float32
     stepPosition::Vector3d{Float32}
-    particle::MCParticle
+
+    # one to one relations
+
+    particle::Union{Nothing,MCParticle}
 end
 
 function CaloHitContribution()
@@ -14,6 +17,6 @@ function CaloHitContribution()
         Float32(0),
         Float32(0),
         Vector3d{Float32}(0.0,0.0,0.0),
-        MCParticle()
+        nothing
         )
 end

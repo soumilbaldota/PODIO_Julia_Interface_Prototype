@@ -15,9 +15,11 @@ mutable struct Cluster
     shapeParameters::Vector{Float32}
     subdetectorEnergies::Vector{Float32}
     
-    clusters::Union{Vector{Cluster},Cluster}
-    hits::Union{Vector{CalorimeterHit},CalorimeterHit}
-    ParticleID::Union{Vector{ParticleID},ParticleID}
+    # one to many relations 
+
+    clusters::Vector{Cluster}
+    hits::Vector{CalorimeterHit}
+    ParticleID::Vector{ParticleID}
 end
 
 function Cluster()

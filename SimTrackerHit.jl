@@ -9,7 +9,7 @@ mutable struct SimTrackerHit
     position::Vector3d{Float64}
     momentum::Vector3d{Float32}
     
-    MCParticle::MCParticle
+    MCParticle::Union{Nothing,MCParticle} # one to one relation
 end
 
 function SimTrackerHit()
@@ -21,6 +21,6 @@ function SimTrackerHit()
         Int32(0),
         Vector3d{Float64}(0.0,0.0,0.0),
         Vector3d{Float32}(0.0,0.0,0.0),
-        MCParticle()
+        nothing
     )
 end

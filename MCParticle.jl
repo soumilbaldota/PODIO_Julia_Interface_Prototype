@@ -12,7 +12,7 @@ mutable struct MCParticle
     spin::Vector3d{Float32}
     endpoint::Vector3d{Float64}
     
-    # Could have one, many, or no parent/s or daughter/s
+    # one to many relations
     parents::Vector{MCParticle}
     daughters::Vector{MCParticle}
 end
