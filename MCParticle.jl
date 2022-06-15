@@ -34,3 +34,7 @@ function MCParticle()
     Vector{MCParticle}([]),
     Vector{MCParticle}([]))
 end
+
+function Base.setproperty!(mcp::MCParticle, f::Symbol, v::Vector)
+	setfield!(mcp,f,typeof(getfield(mcp,f))(v...))
+end
