@@ -24,3 +24,7 @@ function SimTrackerHit()
         nothing
     )
 end
+
+function Base.setproperty!(x::SimTrackerHit, f::Symbol, v::Vector)
+	setfield!(x,f,typeof(getfield(x,f))(v...))
+end

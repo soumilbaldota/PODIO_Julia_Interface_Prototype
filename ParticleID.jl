@@ -3,7 +3,7 @@ mutable struct ParticleID
     PDG::Int32
     algorithmType::Int32
     likelyhood::Float32
-    parameters::Vector{Any}
+    parameters::Vector{Float32}
 end
 
 function ParticleID()
@@ -12,6 +12,6 @@ function ParticleID()
         Int32(0),
         Int32(0),
         Float32(0.0),
-        Vector{Any}([])
+        Vector{Float32}([])
     )
 end

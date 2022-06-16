@@ -20,3 +20,7 @@ function CaloHitContribution()
         nothing
         )
 end
+
+function Base.setproperty!(x::CaloHitContribution, f::Symbol, v::Vector)
+	setfield!(x,f,typeof(getfield(x,f))(v...))
+end

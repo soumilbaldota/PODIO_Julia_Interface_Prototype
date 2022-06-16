@@ -14,3 +14,7 @@ function SimCalorimeterHit()
         nothing
     )
 end
+
+function Base.setproperty!(x::SimCalorimeterHit, f::Symbol, v::Vector)
+	setfield!(x,f,typeof(getfield(x,f))(v...))
+end

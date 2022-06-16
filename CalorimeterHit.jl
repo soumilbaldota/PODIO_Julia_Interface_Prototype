@@ -18,3 +18,7 @@ function CalorimeterHit()
         Int32(0),
     )
 end
+
+function Base.setproperty!(x::CalorimeterHit, f::Symbol, v::Vector)
+	setfield!(x,f,typeof(getfield(x,f))(v...))
+end

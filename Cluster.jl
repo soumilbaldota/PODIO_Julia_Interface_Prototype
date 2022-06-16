@@ -41,3 +41,7 @@ function Cluster()
         Vector{ParticleID}([])
     )
 end
+
+function Base.setproperty!(x::Cluster, f::Symbol, v::Vector)
+	setfield!(x,f,typeof(getfield(x,f))(v...))
+end
