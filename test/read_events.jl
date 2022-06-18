@@ -72,3 +72,5 @@ function read_data(a::MCParticleCollection)
 #     @assert mcp8.parents == MCParticleCollection([mcp5])
 
 end
+
+read_data()
