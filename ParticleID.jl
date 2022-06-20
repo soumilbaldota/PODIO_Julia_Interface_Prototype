@@ -3,6 +3,9 @@ mutable struct ParticleID
     PDG::Int32
     algorithmType::Int32
     likelyhood::Float32
+
+    # vector members
+    
     parameters::Vector{Float32}
 end
 

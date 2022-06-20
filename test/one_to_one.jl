@@ -93,5 +93,4 @@ function read_data(a::CaloHitContributionCollection)
 
 end
 
-test_input = write_data()
-read_data(test_input)
+read_data(write_data())

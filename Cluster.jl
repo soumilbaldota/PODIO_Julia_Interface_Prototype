@@ -12,6 +12,8 @@ mutable struct Cluster
     phi::Float32
     directionError::Vector3d{Float32}
     
+    # vector members
+
     shapeParameters::Vector{Float32}
     subdetectorEnergies::Vector{Float32}
     
