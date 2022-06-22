@@ -1,6 +1,4 @@
 include("../MCParticleCollection.jl")
-include("../MCParticle.jl")
-include("../vectors.jl")
 
 function write_data()
 
@@ -91,7 +89,7 @@ function read_data(a::MCParticleCollection)
     @assert mcp3.generatorStatus ==3 
     @assert length(mcp3.parents)== 1
     @assert mcp3.parents[1] == mcp1
-#     @assert mcp3.parents == MCParticleCollection([mcp1])
+    @assert mcp3.parents == MCParticleCollection([mcp1])
     
     @assert mcp4.PDG == -2
     @assert mcp4.mass == 0.0
@@ -99,7 +97,7 @@ function read_data(a::MCParticleCollection)
     @assert mcp4.generatorStatus ==3
     @assert length(mcp4.parents) == 1
     @assert mcp4.parents[1] == mcp2
-#     @assert mcp4.parents == MCParticleCollection([mcp2])
+    @assert mcp4.parents == MCParticleCollection([mcp2])
     
     @assert mcp5.PDG == -24
     @assert mcp5.mass == 80.799
@@ -108,7 +106,7 @@ function read_data(a::MCParticleCollection)
     @assert length(mcp5.parents) == 2
     @assert mcp5.parents[1] == mcp1
     @assert mcp5.parents[2] == mcp2
-#     @assert mcp5.parents == MCParticleCollection([mcp1,mcp2])
+    @assert mcp5.parents == MCParticleCollection([mcp1,mcp2])
     
     @assert mcp6.PDG ==  1
     @assert mcp6.mass ==  0.0
@@ -116,7 +114,7 @@ function read_data(a::MCParticleCollection)
     @assert mcp6.generatorStatus== 1
     @assert length(mcp6.parents) == 1
     @assert mcp6.parents[1] == mcp5
-#     @assert mcp6.parents == MCParticleCollection([mcp5])
+    @assert mcp6.parents == MCParticleCollection([mcp5])
     
     @assert mcp7.PDG ==  1
     @assert mcp7.mass ==  0.0
@@ -124,7 +122,7 @@ function read_data(a::MCParticleCollection)
     @assert mcp7.generatorStatus== 1
     @assert length(mcp7.parents) == 1
     @assert mcp7.parents[1] == mcp5
-#     @assert mcp7.parents == MCParticleCollection([mcp5])
+    @assert mcp7.parents == MCParticleCollection([mcp5])
     
     @assert mcp8.PDG ==  -2
     @assert mcp8.mass ==  0.0
@@ -132,7 +130,7 @@ function read_data(a::MCParticleCollection)
     @assert mcp8.generatorStatus== 1
     @assert length(mcp8.parents) == 1
     @assert mcp8.parents[1] == mcp5
-#     @assert mcp8.parents == MCParticleCollection([mcp5])
+    @assert mcp8.parents == MCParticleCollection([mcp5])
 
 end
 
