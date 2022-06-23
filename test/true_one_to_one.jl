@@ -1,4 +1,4 @@
-include("../CaloHitContribution.jl")
+include("../src/CaloHitContribution.jl")
 
 function test_relations()
 
@@ -25,10 +25,10 @@ function test_relations()
 	mcp1.momentumAtEndpoint = [1,2,3]
 
 	@assert sccon2.particle.mass == 0.637
-	@assert sccon2.momentumAtEndpoint == Vector3d{Float32}(1,2,3)
+	@assert sccon2.particle.momentumAtEndpoint == Vector3d{Float32}(1,2,3)
 
 	@assert sccon1.particle.mass == 0.637
-	@assert sccon1.momentumAtEndpoint == Vector3d{Float32}(1,2,3)
+	@assert sccon1.particle.momentumAtEndpoint == Vector3d{Float32}(1,2,3)
 
 	@assert sccon1.particle === sccon2.particle
 end

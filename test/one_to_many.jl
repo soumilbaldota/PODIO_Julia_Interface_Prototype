@@ -1,4 +1,4 @@
-include("../MCParticleCollection.jl")
+include("../src/MCParticleCollection.jl")
 
 function write_data()
 
