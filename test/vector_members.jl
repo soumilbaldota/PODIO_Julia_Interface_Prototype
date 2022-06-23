@@ -1,4 +1,4 @@
-include("../ParticleID.jl")
+include("../src/ParticleID.jl")
 
 function write_data()
 

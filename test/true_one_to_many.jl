@@ -1,4 +1,4 @@
-include("../MCParticle.jl")
+include("../src/MCParticle.jl")
 
 function test_relations()
 

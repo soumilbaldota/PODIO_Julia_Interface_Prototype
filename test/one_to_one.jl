@@ -1,4 +1,4 @@
-include("../CaloHitContributionCollection.jl")
+include("../src/CaloHitContributionCollection.jl")
 
 function write_data()
 
