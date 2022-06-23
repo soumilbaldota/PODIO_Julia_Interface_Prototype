@@ -1,4 +1,3 @@
-include("../CaloHitContribution.jl")
 include("../CaloHitContributionCollection.jl")
 
 function write_data()
@@ -18,12 +17,7 @@ function write_data()
 	sccon2=CaloHitContribution()
 	sccon2.PDG = 2
 	sccon2.stepPosition =[7, 6.32, 12]
-	mcp2 = MCParticle()
-	mcp2.PDG = 2212
-	mcp2.mass = 0.938
-	mcp2.momentumAtEndpoint = [0.0,0.0,-7000.0]
-	mcp2.generatorStatus = 3
-	sccon2.particle = mcp2
+	sccon2.particle = mcp1
 	sccon2.energy = 13.6
 
 	sccon3=CaloHitContribution()
@@ -71,9 +65,18 @@ function read_data(a::CaloHitContributionCollection)
 	@assert sccon2.stepPosition == Vector3d{Float32}(7, 6.32, 12)
 	@assert sccon2.particle.PDG == 2212
 	@assert sccon2.particle.mass == 0.938
-	@assert sccon2.particle.momentumAtEndpoint == Vector3d{Float32}(0.0,0.0,-7000.0)
+	@assert sccon2.particle.momentumAtEndpoint == Vector3d{Float32}(0.0,0.0,7000.0)
 	@assert sccon2.particle.generatorStatus == 3
 	@assert sccon2.energy == Float32(13.6)
+
+	# checking egality of particle object
+	@assert sccon2.particle === sccon1.particle
+	
+	@assert sccon2.particle.PDG == sccon1.particle.PDG
+	@assert sccon2.particle.mass == sccon1.particle.mass
+	@assert sccon2.particle.momentumAtEndpoint == sccon1.particle.momentumAtEndpoint
+	@assert sccon2.particle.generatorStatus == sccon1.particle.generatorStatus
+
 
 	@assert sccon3.PDG == 3
 	@assert sccon3.stepPosition == Vector3d{Float32}(17.89, 2.3, 1.618)
