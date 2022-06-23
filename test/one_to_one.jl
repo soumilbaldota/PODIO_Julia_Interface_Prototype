@@ -1,4 +1,5 @@
 include("../src/CaloHitContributionCollection.jl")
+using Test
 
 function write_data()
 
@@ -53,46 +54,46 @@ function read_data(a::CaloHitContributionCollection)
 	sccon4 = a[4]
 
 	
-	@assert sccon1.PDG == 1
-	@assert sccon1.stepPosition == Vector3d{Float32}(3,7,12)
-	@assert sccon1.particle.PDG == 2212
-	@assert sccon1.particle.mass == 0.938
-	@assert sccon1.particle.momentumAtEndpoint == Vector3d{Float32}(0.0,0.0,7000.0)
-	@assert sccon1.particle.generatorStatus == 3
-	@assert sccon1.energy == Float32(12.6)
+	@test sccon1.PDG == 1
+	@test sccon1.stepPosition == Vector3d{Float32}(3,7,12)
+	@test sccon1.particle.PDG == 2212
+	@test sccon1.particle.mass == 0.938
+	@test sccon1.particle.momentumAtEndpoint == Vector3d{Float32}(0.0,0.0,7000.0)
+	@test sccon1.particle.generatorStatus == 3
+	@test sccon1.energy == Float32(12.6)
 
-	@assert sccon2.PDG == 2
-	@assert sccon2.stepPosition == Vector3d{Float32}(7, 6.32, 12)
-	@assert sccon2.particle.PDG == 2212
-	@assert sccon2.particle.mass == 0.938
-	@assert sccon2.particle.momentumAtEndpoint == Vector3d{Float32}(0.0,0.0,7000.0)
-	@assert sccon2.particle.generatorStatus == 3
-	@assert sccon2.energy == Float32(13.6)
+	@test sccon2.PDG == 2
+	@test sccon2.stepPosition == Vector3d{Float32}(7, 6.32, 12)
+	@test sccon2.particle.PDG == 2212
+	@test sccon2.particle.mass == 0.938
+	@test sccon2.particle.momentumAtEndpoint == Vector3d{Float32}(0.0,0.0,7000.0)
+	@test sccon2.particle.generatorStatus == 3
+	@test sccon2.energy == Float32(13.6)
 
 	# checking egality of particle object
-	@assert sccon2.particle === sccon1.particle
+	@test sccon2.particle === sccon1.particle
 	
-	@assert sccon2.particle.PDG == sccon1.particle.PDG
-	@assert sccon2.particle.mass == sccon1.particle.mass
-	@assert sccon2.particle.momentumAtEndpoint == sccon1.particle.momentumAtEndpoint
-	@assert sccon2.particle.generatorStatus == sccon1.particle.generatorStatus
+	@test sccon2.particle.PDG == sccon1.particle.PDG
+	@test sccon2.particle.mass == sccon1.particle.mass
+	@test sccon2.particle.momentumAtEndpoint == sccon1.particle.momentumAtEndpoint
+	@test sccon2.particle.generatorStatus == sccon1.particle.generatorStatus
 
 
-	@assert sccon3.PDG == 3
-	@assert sccon3.stepPosition == Vector3d{Float32}(17.89, 2.3, 1.618)
-	@assert sccon3.particle.PDG == 1
-	@assert sccon3.particle.mass == 0.0
-	@assert sccon3.particle.momentumAtEndpoint == Vector3d{Float32}(0.750,-1.569,32.191)
-	@assert sccon3.particle.generatorStatus == 3
-	@assert sccon3.energy == Float32(4.23)
+	@test sccon3.PDG == 3
+	@test sccon3.stepPosition == Vector3d{Float32}(17.89, 2.3, 1.618)
+	@test sccon3.particle.PDG == 1
+	@test sccon3.particle.mass == 0.0
+	@test sccon3.particle.momentumAtEndpoint == Vector3d{Float32}(0.750,-1.569,32.191)
+	@test sccon3.particle.generatorStatus == 3
+	@test sccon3.energy == Float32(4.23)
 
-	@assert sccon4.PDG == 4
-	@assert sccon4.stepPosition == Vector3d{Float32}(5.7, 3.14, 12)
-	@assert sccon4.particle.PDG == -2
-	@assert sccon4.particle.mass == 0.0
-	@assert sccon4.particle.momentumAtEndpoint == Vector3d{Float32}(-3.047,-19.000,-54.629)
-	@assert sccon4.particle.generatorStatus == 3
-	@assert sccon4.time == Float32(12.65)
+	@test sccon4.PDG == 4
+	@test sccon4.stepPosition == Vector3d{Float32}(5.7, 3.14, 12)
+	@test sccon4.particle.PDG == -2
+	@test sccon4.particle.mass == 0.0
+	@test sccon4.particle.momentumAtEndpoint == Vector3d{Float32}(-3.047,-19.000,-54.629)
+	@test sccon4.particle.generatorStatus == 3
+	@test sccon4.time == Float32(12.65)
 
 end
 

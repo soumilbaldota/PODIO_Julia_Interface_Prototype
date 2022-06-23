@@ -1,4 +1,5 @@
 include("../src/MCParticle.jl")
+using Test
 
 function test_relations()
 
@@ -41,10 +42,10 @@ function test_relations()
 
     # passes if values are changed in parents 
 
-    @assert mcp3.parents[1].mass == 0.612
-    @assert mcp4.parents[1].mass == 0.745
-    @assert mcp5.parents[1].mass == 0.612
-    @assert mcp5.parents[2].mass == 0.745
+    @test mcp3.parents[1].mass == 0.612
+    @test mcp4.parents[1].mass == 0.745
+    @test mcp5.parents[1].mass == 0.612
+    @test mcp5.parents[2].mass == 0.745
 end
 
 test_relations()
