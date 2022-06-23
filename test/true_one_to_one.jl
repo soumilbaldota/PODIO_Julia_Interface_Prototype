@@ -1,14 +1,14 @@
 include("../CaloHitContribution.jl")
 
-function test_copy()
+function test_relations()
 
 	mcp1 = MCParticle()
-    mcp1.PDG = 2212
-    mcp1.mass = 0.938
-    mcp1.momentumAtEndpoint = [0.0,0.0,7000.0]
-    mcp1.generatorStatus=3
+	mcp1.PDG = 2212
+	mcp1.mass = 0.938
+	mcp1.momentumAtEndpoint = [0.0,0.0,7000.0]
+	mcp1.generatorStatus=3
 
-    sccon1=CaloHitContribution()
+	sccon1=CaloHitContribution()
 	sccon1.PDG = 2
 	sccon1.stepPosition =[7, 6.19, 12]
 	sccon1.particle = mcp1
@@ -33,4 +33,4 @@ function test_copy()
 	@assert sccon1.particle === sccon2.particle
 end
 
-test_copy()
+test_relations()

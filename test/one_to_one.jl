@@ -71,6 +71,12 @@ function read_data(a::CaloHitContributionCollection)
 
 	# checking egality of particle object
 	@assert sccon2.particle === sccon1.particle
+	
+	@assert sccon2.particle.PDG == sccon1.particle.PDG
+	@assert sccon2.particle.mass == sccon1.particle.mass
+	@assert sccon2.particle.momentumAtEndpoint == sccon1.particle.momentumAtEndpoint
+	@assert sccon2.particle.generatorStatus == sccon1.particle.generatorStatus
+
 
 	@assert sccon3.PDG == 3
 	@assert sccon3.stepPosition == Vector3d{Float32}(17.89, 2.3, 1.618)

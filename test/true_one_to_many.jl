@@ -1,6 +1,6 @@
 include("../MCParticle.jl")
 
-function test_copy()
+function test_relations()
 
     mcp1 = MCParticle()
     mcp1.PDG = 2212
@@ -47,4 +47,4 @@ function test_copy()
     @assert mcp5.parents[2].mass == 0.745
 end
 
-test_copy()
+test_relations()
