@@ -1,4 +1,5 @@
 include("../src/MCParticleCollection.jl")
+using Test
 
 function write_data()
 
@@ -73,58 +74,58 @@ function read_data(a::MCParticleCollection)
     mcp7=a[7]
     mcp8=a[8]
     
-    @assert mcp1.PDG == 2212
-    @assert mcp1.mass == 0.938
-    @assert mcp1.momentumAtEndpoint == Vector3d{Float32}(0,0,7000)
-    @assert mcp1.generatorStatus ==3
+    @test mcp1.PDG == 2212
+    @test mcp1.mass == 0.938
+    @test mcp1.momentumAtEndpoint == Vector3d{Float32}(0,0,7000)
+    @test mcp1.generatorStatus ==3
     
-    @assert mcp2.PDG == 2212
-    @assert mcp2.mass == 0.938
-    @assert mcp2.momentumAtEndpoint == Vector3d{Float32}(0,0,-7000)
-    @assert mcp2.generatorStatus ==3
+    @test mcp2.PDG == 2212
+    @test mcp2.mass == 0.938
+    @test mcp2.momentumAtEndpoint == Vector3d{Float32}(0,0,-7000)
+    @test mcp2.generatorStatus ==3
     
-    @assert mcp3.PDG == 1
-    @assert mcp3.mass == 0.0
-    @assert mcp3.momentumAtEndpoint == Vector3d{Float32}(0.75,-1.569,32.191)
-    @assert mcp3.generatorStatus ==3 
-    @assert length(mcp3.parents)== 1
-    @assert mcp3.parents[1] == mcp1
+    @test mcp3.PDG == 1
+    @test mcp3.mass == 0.0
+    @test mcp3.momentumAtEndpoint == Vector3d{Float32}(0.75,-1.569,32.191)
+    @test mcp3.generatorStatus ==3 
+    @test length(mcp3.parents)== 1
+    @test mcp3.parents[1] == mcp1
     
-    @assert mcp4.PDG == -2
-    @assert mcp4.mass == 0.0
-    @assert mcp4.momentumAtEndpoint == Vector3d{Float32}(-3.047, -19, -54.629)
-    @assert mcp4.generatorStatus ==3
-    @assert length(mcp4.parents) == 1
-    @assert mcp4.parents[1] == mcp2
+    @test mcp4.PDG == -2
+    @test mcp4.mass == 0.0
+    @test mcp4.momentumAtEndpoint == Vector3d{Float32}(-3.047, -19, -54.629)
+    @test mcp4.generatorStatus ==3
+    @test length(mcp4.parents) == 1
+    @test mcp4.parents[1] == mcp2
     
-    @assert mcp5.PDG == -24
-    @assert mcp5.mass == 80.799
-    @assert mcp5.momentumAtEndpoint == Vector3d{Float32}(-1.517,-20.68,-20.605)
-    @assert mcp5.generatorStatus ==3
-    @assert length(mcp5.parents) == 2
-    @assert mcp5.parents[1] == mcp1
-    @assert mcp5.parents[2] == mcp2
+    @test mcp5.PDG == -24
+    @test mcp5.mass == 80.799
+    @test mcp5.momentumAtEndpoint == Vector3d{Float32}(-1.517,-20.68,-20.605)
+    @test mcp5.generatorStatus ==3
+    @test length(mcp5.parents) == 2
+    @test mcp5.parents[1] == mcp1
+    @test mcp5.parents[2] == mcp2
     
-    @assert mcp6.PDG ==  1
-    @assert mcp6.mass ==  0.0
-    @assert mcp6.momentumAtEndpoint ==  Vector3d{Float32}(-2.445,-28.816,6.082)
-    @assert mcp6.generatorStatus== 1
-    @assert length(mcp6.parents) == 1
-    @assert mcp6.parents[1] == mcp5
+    @test mcp6.PDG ==  1
+    @test mcp6.mass ==  0.0
+    @test mcp6.momentumAtEndpoint ==  Vector3d{Float32}(-2.445,-28.816,6.082)
+    @test mcp6.generatorStatus== 1
+    @test length(mcp6.parents) == 1
+    @test mcp6.parents[1] == mcp5
     
-    @assert mcp7.PDG ==  1
-    @assert mcp7.mass ==  0.0
-    @assert mcp7.momentumAtEndpoint ==  Vector3d{Float32}(-2.445,-28.816,6.082)
-    @assert mcp7.generatorStatus== 1
-    @assert length(mcp7.parents) == 1
-    @assert mcp7.parents[1] == mcp5
+    @test mcp7.PDG ==  1
+    @test mcp7.mass ==  0.0
+    @test mcp7.momentumAtEndpoint ==  Vector3d{Float32}(-2.445,-28.816,6.082)
+    @test mcp7.generatorStatus== 1
+    @test length(mcp7.parents) == 1
+    @test mcp7.parents[1] == mcp5
     
-    @assert mcp8.PDG ==  -2
-    @assert mcp8.mass ==  0.0
-    @assert mcp8.momentumAtEndpoint ==  Vector3d{Float32}(-3.962,-49.498,-26.687)
-    @assert mcp8.generatorStatus== 1
-    @assert length(mcp8.parents) == 1
-    @assert mcp8.parents[1] == mcp5
+    @test mcp8.PDG ==  -2
+    @test mcp8.mass ==  0.0
+    @test mcp8.momentumAtEndpoint ==  Vector3d{Float32}(-3.962,-49.498,-26.687)
+    @test mcp8.generatorStatus== 1
+    @test length(mcp8.parents) == 1
+    @test mcp8.parents[1] == mcp5
 
 end
 

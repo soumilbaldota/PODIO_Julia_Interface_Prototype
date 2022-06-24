@@ -1,4 +1,5 @@
 include("../src/ParticleID.jl")
+using Test
 
 function write_data()
 
