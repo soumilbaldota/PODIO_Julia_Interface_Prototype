@@ -1,10 +1,11 @@
 using StaticArrays
+include("Vector3fStruct.jl")
 
-mutable struct ReconstructedParticle{Vector3fT, ClusterT, TrackT, ReconstructedParticleT, ParticleIDT, VertexT}
+mutable struct ReconstructedParticle{ClusterT, TrackT, ReconstructedParticleT, ParticleIDT, VertexT}
 	type::Int32
 	energy::Float32
-	momentum::Vector3fT
-	referencePoint::Vector3fT
+	momentum::Vector3f
+	referencePoint::Vector3f
 	charge::Float32
 	mass::Float32
 	goodnessOfPID::Float32

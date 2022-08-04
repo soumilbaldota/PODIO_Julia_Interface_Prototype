@@ -4,7 +4,7 @@ include("VertexStruct.jl")
 include("Vector3fConstructor.jl")
 
 function Vertex()
-	return Vertex{Vector3f, ReconstructedParticle}(
+	return Vertex{ReconstructedParticle}(
 	Int32(0),
 	Float32(0),
 	Float32(0),
