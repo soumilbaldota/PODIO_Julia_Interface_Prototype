@@ -1,9 +1,13 @@
 include("ReconstructedParticleStruct.jl")
 include("VertexStruct.jl")
 
+include("Vector3fConstructor.jl")
+include("ParticleIDConstructor.jl")
+include("ClusterConstructor.jl")
+include("TrackConstructor.jl")
 
 function ReconstructedParticle()
-	return ReconstructedParticle{Vertex}(
+	return ReconstructedParticle{Vector3f, Cluster, Track, ReconstructedParticle, ParticleID, Vertex}(
 	Int32(0),
 	Float32(0),
 	Vector3f(),

@@ -1,22 +1,18 @@
 using StaticArrays
-include("Vector3fConstructor.jl")
-include("ParticleIDConstructor.jl")
-include("ClusterConstructor.jl")
-include("TrackConstructor.jl")
 
-mutable struct ReconstructedParticle{T}
+mutable struct ReconstructedParticle{Vector3fT, ClusterT, TrackT, ReconstructedParticleT, ParticleIDT, VertexT}
 	type::Int32
 	energy::Float32
-	momentum::Vector3f
-	referencePoint::Vector3f
+	momentum::Vector3fT
+	referencePoint::Vector3fT
 	charge::Float32
 	mass::Float32
 	goodnessOfPID::Float32
 	covMatrix::MVector{10, Float32}
-	clusters::Vector{ Cluster }
-	tracks::Vector{ Track }
-	particles::Vector{ ReconstructedParticle }
-	particleIDs::Vector{ ParticleID }
-	startVertex::Union{Nothing, T}
-	particleIDUsed::Union{Nothing, ParticleID }
+	clusters::Vector{ ClusterT }
+	tracks::Vector{ TrackT }
+	particles::Vector{ ReconstructedParticleT }
+	particleIDs::Vector{ ParticleIDT }
+	startVertex::Union{Nothing, VertexT}
+	particleIDUsed::Union{Nothing, ParticleIDT }
 end

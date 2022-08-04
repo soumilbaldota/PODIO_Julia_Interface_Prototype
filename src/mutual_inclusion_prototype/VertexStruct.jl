@@ -1,12 +1,12 @@
 using StaticArrays
-include("Vector3fConstructor.jl")
-mutable struct Vertex{T}
+
+mutable struct Vertex{Vector3fT, ReconstructedParticleT}
 	primary::Int32
 	chi2::Float32
 	probability::Float32
-	position::Vector3f
+	position::Vector3fT
 	covMatrix::MVector{6, Float32}
 	algorithmType::Int32
-	associatedParticle::Union{Nothing, T}
+	associatedParticle::Union{Nothing, ReconstructedParticleT}
 	parameters::Vector{ Float32 }
 end
