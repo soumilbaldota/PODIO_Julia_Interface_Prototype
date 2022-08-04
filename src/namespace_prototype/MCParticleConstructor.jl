@@ -1,6 +1,4 @@
-module OuterNamespace #parent module
-
-module MCParticlemodule
+module MCParticleModule
 export MCParticle
 include("MCParticleStruct.jl")
 function MCParticle()
@@ -23,25 +21,3 @@ function MCParticle()
 end
 end
 
-using .MCParticlemodule  # brings MCParticle into the namespace
-export MCParticle # export it from OuterNamespace also
-
-end
-
-#= 
-
-MCParticle can be accessed using
-
-julia> include("MCParticleConstructor.jl")
-Main.OuterNamespace
-
-julia> OuterNamespace.MCParticle()
-Main.OuterNamespace.MCParticlemodule.MCParticle{Main.OuterNamespace.MCParticlemodule.MCParticle}
-(0, 0, 0, 0.0f0, 0.0f0, 0.0, Main.OuterNamespace.MCParticlemodule.Vector3d(0.0, 0.0, 0.0), 
-Main.OuterNamespace.MCParticlemodule.Vector3d(0.0, 0.0, 0.0), Main.OuterNamespace.MCParticlemodule.Vector3f(0.0f0, 0.0f0, 0.0f0), 
-Main.OuterNamespace.MCParticlemodule.Vector3f(0.0f0, 0.0f0, 0.0f0), Main.OuterNamespace.MCParticlemodule.Vector3f(0.0f0, 0.0f0, 0.0f0), 
-Main.OuterNamespace.MCParticlemodule.Vector2i(0, 0), Main.OuterNamespace.MCParticlemodule.MCParticle[], 
-Main.OuterNamespace.MCParticlemodule.MCParticle[])
-
-
-=#
